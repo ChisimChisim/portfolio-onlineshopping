@@ -1,0 +1,174 @@
+body { 
+	color: #333333;
+	font-family: sans-serif;
+}
+
+table caption{
+	font-size: 18px; 
+	line-height: 1.333;
+	font-weight: bold;
+	text-align: left;
+}
+
+a{
+	text-decoration:none;
+}
+
+img{
+	margin: 20px;
+}
+
+#page {
+	width: 980px;
+	margin: 0 auto;
+}
+
+#pageBody .registration header{
+	font-size: 26px; 
+	line-height: 1.231;
+	font-weight: bold;
+	background-color: #FFFF00;
+	margin: 10px;
+}
+
+#pageBody .registration label{
+	font-size: 18px; 
+	line-height: 1.333;
+	font-weight: bold;
+	margin: 10px;
+}
+
+#pageBody .registration .inputText input, select{
+	padding: 5px 10px;
+    width: 300px;
+    background: #ddf0ff;
+    border-radius: 3px;
+    border:none;
+    box-shadow:none;
+    margin: 10px 5px;
+}
+#pageBody .registration .loginForm input{
+    padding: 5px 10px;
+    width: 500px;
+    height: 25px;
+    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    margin: 10px 5px;
+}
+
+#pageBody .error_list {
+	padding: 10px 30px;
+    color: #ff2e5a;
+    font-size: 86%;
+    text-align: left;
+    border: 1px solid #ff2e5a;
+    border-radius: 5px;
+}
+
+#pageBody .list table{
+	border: 1px solid #CCCCCC;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#pageBody .list table th{
+	background-color: #EEEEEE;
+	}
+
+#pageBody .list table tr th,
+#pageBody .list table tr td {
+	font-size: 14px;
+	line-height: 1.429;
+	border: 1px solid #CCCCCC;
+	padding:10px 20px;
+
+}
+
+#pageBody .loginForm{
+
+}
+
+.btnBlue{
+	margin: 20px 20px;
+	font-weight: bold;
+    padding: 10px 20px;
+    font-size: 100%;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #058BA9;
+    background-image: linear-gradient(to bottom, #92CDDB, #058BA9);
+    border: 1px solid #058BA9;
+    box-shadow: 1px 1px 0 #9DDDED inset;
+    text-shadow: 1px -1px 0 #333333;
+}
+
+.btnRed{
+	margin: 20px 20px;
+	font-weight: bold;
+    padding: 10px 20px;
+    font-size: 100%;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #FF9933, #FF0000);
+    border: 1px solid #FF0000;
+    box-shadow: 1px 1px 0 #FFCC66 inset;
+    text-shadow: 1px -1px 0 #333333;
+}
+
+.btnBlue_lg{
+	margin: 20px 20px;
+	font-weight: bold;
+    padding: 10px 20px;
+    font-size: 2.3em;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #248;
+    width:430px;
+    height:200px;
+  
+}
+
+.btnGreen_lg{
+	margin: 20px 20px;
+	font-weight: bold;
+    padding: 10px 20px;
+    font-size: 2.3em;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #32CD32;
+    width:430px;
+    height:200px;
+}
+
+.btnBlue:hover{
+	opacity: 0.7;
+}
+.btnRed:hover{
+	opacity: 0.7;
+}
+.btnBlue_lg:hover{
+	opacity: 0.7;
+}
+.btnGreen_lg:hover{
+	opacity: 0.7;
+}
+
+.btn_logout {
+	display: inline-block;
+	float: right;
+}
+
+.btn_logout: after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+
+
+
+

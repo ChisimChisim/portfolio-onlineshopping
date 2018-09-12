@@ -1,0 +1,3 @@
+$(function(){
+$("#role").val(option);
+});
