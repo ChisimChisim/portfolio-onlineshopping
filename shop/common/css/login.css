@@ -1,0 +1,55 @@
+#pageBody .loginForm{
+     width: 100%;
+     margin: 0 auto;
+}
+
+
+#pageBody .loginForm .loginForm-input{
+    margin: 0 auto;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+#pageBody .loginForm .loginForm-input label,
+#pageBody .loginForm .loginForm-input input{
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#pageBody .loginForm .loginForm-input input{
+	border-radius: 5px;
+    border: 1px solid #d3d3d3;
+}
+
+#pageBody .loginForm .error_message{
+	color: #ff0000;
+}
+
+.btnBlue{
+	margin: 20px 20px;
+	font-weight: bold;
+    padding: 10px 20px;
+    font-size: 100%;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #058BA9;
+    background-image: linear-gradient(to bottom, #92CDDB, #058BA9);
+    border: 1px solid #058BA9;
+    box-shadow: 1px 1px 0 #9DDDED inset;
+    text-shadow: 1px -1px 0 #333333;
+}
+
+/*######### 600px < screen  ############ */
+@media (min-width: 600px) {
+#pageBody .loginForm{
+	width: 600px;
+}
+}
+
+

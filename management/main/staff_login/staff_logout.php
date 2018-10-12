@@ -22,7 +22,7 @@ session_destroy();
  <h1>Successfully logged out!</h1>
 </div>
 <div id='pageBody' >
-   <a href="staff_top.php" class='btnBlue'>Go to Log-in form</a> 
+   <a href="../../index.php" class='btnBlue'>Go to Log-in form</a> 
 </div>
 </div>
 </body>

@@ -49,7 +49,7 @@ if($staffid === $staff_id && password_verify($password, $staff_pass)){
     $_SESSION['auth'] = true;
     $_SESSION['name'] = $staff_name;
     $_SESSION['role'] = $staff_role;
-    header('Location:./staff_top.php');
+    header('Location:../../index.php');
     exit();
 }
 if($_SESSION['auth'] ===false){
@@ -83,7 +83,7 @@ header('X-Context-Type-Options: nonsniff');
     </ul>
 <?php endif; ?>
 
-<form method='post' class='registration' action="<?php echo p::h($_SESSION['SCRIPT_NAME']) ?>">
+<form method='post' class='registration' action="">
 	<div class='loginForm'>
 		<label for='staffid'>Staff Id: </label><br>
         <input id='staffid' name='staffid' type='text' /><br>

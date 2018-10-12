@@ -119,7 +119,7 @@ header('X-Context-Type-Options: nonsniff');
 	<input type='submit' class='btnRed' name='btn_delete' value='Delete'>
 	<input type='submit' class='btnBlue' name='btn_add' value='Add new staff'>
 </form>
-    <p><a href="../staff_login/staff_top.php" class='btnBlue'>Go to Top</a></p>
+    <p><a href="../../index.php" class='btnBlue'>Go to Top</a></p>
 </div>
 </div>
 </div>
