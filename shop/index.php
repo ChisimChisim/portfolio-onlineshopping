@@ -36,7 +36,7 @@ if(isset($_SESSION['first_name'])){
 <body>
 <div id='header-banner' role='banner'>
 	<?php if($auth===false){ ?>
-		<p>Click <a href="./login/createAccount.php">here</a> to Sign Up and Get 5% rewards on your purchace</p>
+		<p>Click <a href="./login/createAccount.php">here</a> to Sign Up and Get $5 points for each $50 purchase</p>
     <?php }else{ ?>
         <p>Free shipping on $35+ orders</p>		
 	<?php  }?>

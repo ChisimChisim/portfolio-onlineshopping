@@ -149,11 +149,11 @@ try{
     if ($pro_image == ''){
         $sql = 'UPDATE mst_product SET name=?,price=?,unit_code=?, category_code=? WHERE code=?';
         $stmt = $db -> prepare($sql);
-        $stmt->execute(array($pro_name, $pro_price, $pro_unit, $pro_category, $pro_code));
+        $stmt->execute(array($pro_name, $pro_price*100, $pro_unit, $pro_category, $pro_code));
     }else{
         $sql = 'UPDATE mst_product SET name=?,price=?,unit_code=?, category_code=?, image=? WHERE code=?';
         $stmt = $db -> prepare($sql);
-        $stmt->execute(array($pro_name, $pro_price, $pro_unit, $pro_category, $pro_image, $pro_code));
+        $stmt->execute(array($pro_name, $pro_price*100, $pro_unit, $pro_category, $pro_image, $pro_code));
         //Delete old image
         unlink($dir . '/' . $old_image);
     }
@@ -205,7 +205,7 @@ header('X-Context-Type-Options: nonsniff');
         <label for='name'>Product name: </label><br>
         <input id='name' name='name' type='text' value="<?php  p::h($pro_name); ?>"/><br>
         <label for='price'>Price: </label><br>
-        <input id='price' name='price' type='text' value="<?php  p::h($pro_price); ?>"/><br>
+        <input id='price' name='price' type='text' value="<?php  p::h(number_format($pro_price/100,2)); ?>"/><br>
         <label for='unit'>Unit: </label><br>
         <select id='unit' name='unit'>
             <?php foreach($unit as $row): ?>

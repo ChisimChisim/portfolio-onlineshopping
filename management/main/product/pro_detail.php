@@ -62,7 +62,7 @@ header('X-Context-Type-Options: nonsniff');
 <div id='pageBody'>
     <p>Product code: <?php  p::h($pro_code); ?></p>
     <p>Name: <?php  p::h($pro_name); ?></p>
-    <p>Price: <?php  p::h($pro_price); ?></p>
+    <p>Price: <?php  p::h(number_format($pro_price/100,2)); ?></p>
     <p>Unit: <?php  p::h($pro_unit); ?></p>
     <p>Category: <?php  p::h($pro_category); ?></p>
     <img src="<?php p::h($dir); ?><?php p::h($pro_image); ?>" /></br>

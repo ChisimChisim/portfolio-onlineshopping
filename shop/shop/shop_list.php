@@ -99,7 +99,7 @@ header('X-Context-Type-Options: nonsniff');
 				    <input type='hidden' name='image' value='<?php p::h($row['image']); ?>'/>	
 				</form>	
 					<p><?php P::h($row['name']) ?></p>
-					<p>$<?php P::h($row['price']) ?>/<?php P::h($row['unit']) ?></p>
+					<p>$<?php P::h(number_format($row['price']/100,2)) ?>/<?php P::h($row['unit']) ?></p>
 			 </div>
         <?php endforeach; ?>
    

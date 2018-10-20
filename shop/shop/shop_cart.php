@@ -118,7 +118,7 @@ header('X-Context-Type-Options: nonsniff');
   <section class='cart'>
    <div class='cart_total'>
       Subtotal(<span name='totalqty'><?php p::h($totalqty) ?></span> 
-        items): $<span name='subtotal'><?php p::h(number_format($subtotal, 2)) ?></span>
+        qty): $<span name='subtotal'><?php p::h(number_format($subtotal/100, 2)) ?></span>
       <a href="./checkoutConfirm.php"><button id="checkoutButton" class="btnBlue">Proceed to checkout</button></a>
    </div>
 
@@ -130,7 +130,7 @@ header('X-Context-Type-Options: nonsniff');
 			    </div>
 			    <div class='detail_text'>
 			    	<p><?php P::h($row['name']) ?></p>
-				    <p>$<?php P::h($row['price']) ?>/<?php P::h($row['unit']) ?></p>
+				    <p>$<?php P::h(number_format($row['price']/100,2)) ?>/<?php P::h($row['unit']) ?></p>
 				         <label for='qty'>Quantity: </label>
 				         <select id="qty_<?php P::h($row['code']); ?>" name='qty'>
 					 <?php 
@@ -153,7 +153,7 @@ header('X-Context-Type-Options: nonsniff');
 
 <section class='subtotal'>
  Subtotal(<span name='totalqty'><?php p::h($totalqty) ?></span> items): 
-        $<span name='subtotal'><?php p::h(number_format($subtotal, 2)) ?></span>
+        $<span name='subtotal'><?php p::h(number_format($subtotal/100, 2)) ?></span>
 </section>   
 
 <a href="../index.php">Back to Top</a> 

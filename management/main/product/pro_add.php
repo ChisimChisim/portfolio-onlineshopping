@@ -122,7 +122,7 @@ try{
     $sql = 'INSERT INTO mst_product(name,price,unit_code,image,category_code) VALUES (?,?,?,?,?)';
     $stmt = $db -> prepare($sql);
     $data[] = $pro_name;
-    $data[] = $pro_price;
+    $data[] = $pro_price*100;
     $data[] = $pro_unit;
     $data[] = $pro_image;
     $data[] = $pro_category;
@@ -182,7 +182,7 @@ header('X-Context-Type-Options: nonsniff');
                     <?php foreach($category as $row): ?>
                     <option value ="<?php P::h($row['code']) ?>;<?php P::h($row['name']) ?>"><?php P::h($row['name']) ?></option> <?php endforeach; ?>
                 </select><br>
-                <label for='image'>Image(file size is up to 1M byte): </label><br>
+                <label for='image'>Image(Recommened size -> W:400xH:250pixels. File size is up to 1M byte): </label><br>
                 <input type='file' id='image' name='image'/>
             </div>
                 <a href='pro_list.php' class='btnBlue'>Back</a>

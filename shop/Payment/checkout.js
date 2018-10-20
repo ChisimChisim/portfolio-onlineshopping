@@ -11,7 +11,7 @@ if(undefined !== auth && auth==='1'){ //sign-in
 
 /**************  STRIPE API  SART*******************/
 var handler = StripeCheckout.configure({
-    key: 'pk_test_GwnRfGIo7S3uW7j1URzlEU7E',  //publishable key
+    key: 'pk_test_**********************',  //publishable key
     image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
     locale: 'auto',
     token: function(token, address) {
@@ -45,7 +45,7 @@ var handler = StripeCheckout.configure({
     var inputTotal = document.createElement("input");
     inputTotal.setAttribute('type', "hidden");
     inputTotal.setAttribute('name', "totalPrice");
-    inputTotal.setAttribute('value', (checkout_total*100).toFixed(0));
+    inputTotal.setAttribute('value', (checkout_total).toFixed(0));
     form.appendChild(inputTotal);
 
     var inputAddress = document.createElement("input");
@@ -70,13 +70,13 @@ var handler = StripeCheckout.configure({
   // Open Checkout with further options
   handler.open({
     name: 'Kenkoh',
-    description: 'Total: $' + checkout_total.toFixed(2) + ' (Qty: ' + checkout_qty + ')',
+    description: 'Total: $' + (checkout_total/100).toFixed(2) + ' (Qty: ' + checkout_qty + ')',
     panelLabel:'Pay with credit',
     currency:'USD',
     billingAddress:true,
     shippingAddress:true,
     zipCode: true,
-    amount: parseInt(checkout_total*100),
+    amount: checkout_total,
   });
   e.preventDefault();
 });

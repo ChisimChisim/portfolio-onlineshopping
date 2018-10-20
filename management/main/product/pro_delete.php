@@ -104,7 +104,7 @@ header('X-Context-Type-Options: nonsniff');
                 <label for='name'>Product name: </label><br>
                 <input id='name' name='name' type='text' value="<?php  p::h($pro_name); ?>" disabled="disabled"/><br>
                 <label for='price'>Price: </label><br>
-                <input id='price' name='price' type='text' value="<?php  p::h($pro_price); ?>" disabled="disabled"/><br>
+                <input id='price' name='price' type='text' value="<?php  p::h(number_format($pro_price/100,2)); ?>" disabled="disabled"/><br>
                 <label for='unit'>Unit: </label><br>
                 <input id='unit' name='unit' type='text' value="<?php  p::h($pro_unit); ?>" disabled="disabled"/><br>
                 <label for='category'>Category: </label><br>

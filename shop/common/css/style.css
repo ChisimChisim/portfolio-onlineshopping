@@ -422,6 +422,12 @@ ul li {
 	float:right;
 }
 
+#pageBody::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
 #pageFooter{
 	width: 100%;
 	position: absolute;

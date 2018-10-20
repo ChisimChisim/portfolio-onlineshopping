@@ -125,7 +125,7 @@ header('X-Context-Type-Options: nonsniff');
 			<input type='radio' name='procode' value="<?php P::h($row['code']) ?>"/></td>
 			<td><?php P::h($row['code']) ?></td>
 			<td><?php P::h($row['name']) ?></td>
-			<td><?php P::h($row['price']) ?></td>
+			<td><?php P::h(number_format($row['price']/100,2)) ?></td>
 			<td><?php P::h($row['unit']) ?></td>
 			<td><?php P::h($row['category']) ?></td>
 		</tr>

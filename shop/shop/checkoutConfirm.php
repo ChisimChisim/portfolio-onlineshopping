@@ -26,32 +26,32 @@ $id = $_SESSION['customer_id'];
 $dbModel = new DbModel();
 $rewards = $dbModel->getRewards($id);
 if(isset($rewards['points'])){
-	$points = $rewards['points'];
+	$points = $rewards['points']*100;
 }else{
 	$point = 0;
 }
 
 if($total<$points){
-	$max_apply_point = intval($total);
+	$max_apply_point = intval($total/100);
 }else{
-	$max_apply_point = $points;
+	$max_apply_point = $points/100;
 }
 }
 
 if(isset($_POST['apply_points']) && isset($_POST['total']) && isset($_POST['points'])){	
-	$apply_points= htmlspecialchars($_POST['apply_points'], ENT_QUOTES, 'UTF-8');
+	$apply_points= (htmlspecialchars($_POST['apply_points'], ENT_QUOTES, 'UTF-8'))*100;
 	$total= htmlspecialchars($_POST['total'], ENT_QUOTES, 'UTF-8');
 	$points= htmlspecialchars($_POST['points'], ENT_QUOTES, 'UTF-8');
 	$total = $total - $apply_points;
 	$points = $points - $apply_points;
 	if($total<$points){
-	$max_apply_point = intval($total);
+	$max_apply_point = intval($total/100);
     }else{
-	$max_apply_point = $points;
+	$max_apply_point = $points/100;
     }
 }
 
-$_SESSION['use_points'] = $subtotal - $total;
+$_SESSION['use_points'] = intval(($subtotal - $total)/100);
 /***** Change Cart info to JSON   *****/
 /* for pass Cart(array) to Javascript */
 $jsonTotal=json_encode($total);
@@ -104,20 +104,20 @@ header('X-Context-Type-Options: nonsniff');
 				<tr>
 				    <td><img src="<?php p::h($dir); ?><?php p::h($row['image']); ?>" /></td>
 				    <td><?php P::h($row['name']) ?></td>
-				    <td>$<?php P::h($row['price']) ?>/<?php P::h($row['unit']) ?></td>
+				    <td>$<?php P::h(number_format($row['price']/100,2)) ?>/<?php P::h($row['unit']) ?></td>
 				    <td><?php P::h($row['qty']) ?></td>
 			    </tr>
 			</tbody>
 			<?php endforeach; ?>
 			<tfoot>
 				<tr>
-				<td colspan="4">subtotal: $<?php P::h(number_format($subtotal, 2)) ?>(qty: <?php P::h($qty) ?>)</td>
+				<td colspan="4">subtotal: $<?php P::h(number_format($subtotal/100, 2)) ?>(qty: <?php P::h($qty) ?>)</td>
 				</tr>
                 <tr>
-				<td colspan="4">Reward points: -$<?php P::h(number_format($apply_points, 2)) ?></td>
+				<td colspan="4">Reward points: -$<?php P::h($_SESSION['use_points']) ?></td>
 			    </tr>
 			    <tr>
-				<td colspan="4"><strong>total: $<?php P::h(number_format($total, 2)) ?></strong></td>
+				<td colspan="4"><strong>total: $<?php P::h(number_format($total/100, 2)) ?></strong></td>
 			    </tr>
 			</tfoot>
 		</table>
@@ -128,7 +128,7 @@ header('X-Context-Type-Options: nonsniff');
         
         <div id=applyRewards>
         	<form action="checkoutConfirm.php" method="post">
-        		<p><b><?php P::h($first_name) ?>, You have $<?php P::h($points)?> rewards!</b></p>
+        		<p><b><?php P::h($first_name) ?>, You have $<?php P::h($points/100)?> rewards!</b></p>
         		<input type="number" name="apply_points" value="0" step="1" min="0" max="<?php P::h($max_apply_point)?>" >
         		<input type="hidden" name="total" value="<?php P::h($total)?> ">
         		<input type="hidden" name="points" value="<?php P::h($points)?> ">

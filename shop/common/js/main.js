@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
             var total = get_total();
             //set total price and qty to HTML
             for ( var x = 0, len = subtotal.length; x < len; x++ ) {
-                subtotal[x].textContent = total['subtotal'].toFixed(2);
+                subtotal[x].textContent = (total['subtotal']/100).toFixed(2);
                 totalqty[x].textContent = total['totalqty'];
             }
             if(total['totalqty']===0){
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
              var total = get_total();
              //set total price and qty to HTML
              for ( var x = 0, len = subtotal.length; x < len; x++ ) {
-                subtotal[x].textContent = total['subtotal'].toFixed(2);
+                subtotal[x].textContent = (total['subtotal']/100).toFixed(2);
                 totalqty[x].textContent = total['totalqty'];
             }
                 if(total['totalqty']===0){

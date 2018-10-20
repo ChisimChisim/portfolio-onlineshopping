@@ -93,7 +93,7 @@ header('X-Context-Type-Options: nonsniff');
 		</div>
 		<div class='detail_text'>
             <p><?php P::h($pro_name) ?></p>
-			<p>price: $<?php P::h($pro_price) ?>/<?php P::h($pro_unit) ?></p>
+			<p>price: $<?php P::h(number_format($pro_price/100,2)) ?>/<?php P::h($pro_unit) ?></p>
 			<form method='post' action='shop_cart.php'>
 				<input type="submit" class="btnBlue" value="Add to Cart!"/>
 				<input type="hidden" name='code' value="<?php p::h($pro_code); ?>" />
